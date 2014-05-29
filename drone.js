@@ -24,6 +24,7 @@ starfox.on('connection', function(player) {
 starfox.mount(server);
 server.listen(3000);
 
+
 //var client  = arDrone.createClient();
 //var pngStream = client.getPngStream();
 /*require('ar-drone-png-stream')(client, { port: 8000 });
@@ -55,16 +56,18 @@ client
   });
 */
 
-//var autonomy = require('ardrone-autonomy');
-//var mission  = autonomy.createMission();
+var autonomy = require('ardrone-autonomy');
+var mission  = autonomy.createMission();
 
-/*mission.takeoff()
+mission.takeoff()
        .zero()       // Sets the current state as the reference
        .altitude(1)  // Climb to altitude = 1 meter
-       .forward(1)   
-       .right(1.7)     
-       .backward(1) 
-       .left(1.7);
+//    .forward(1)   
+//       .right(1.7)     
+//       .backward(1) 
+//       .left(1.7)
+       .hover(1000)
+       .land();
 
 mission.run(function (err, result) {
     if (err) {
@@ -75,4 +78,4 @@ mission.run(function (err, result) {
         console.log("Mission success!");
         process.exit(0);
     }
-});*/
+});
