@@ -1,0 +1,12 @@
+{
+  "author": {
+    "name": "Drone"
+  },
+  "name": "project-drone",
+  "repository": {
+    "type": "git",
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+  }
+}
