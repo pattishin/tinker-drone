@@ -4,9 +4,9 @@
   },
   "name": "project-drone",
   "repository": {
-    "type": "git",
+    "type": "git"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "~0.4.1"
   }
 }
