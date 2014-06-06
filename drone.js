@@ -1,8 +1,7 @@
 
 var arDrone = require('ar-drone');
-var starfox = require('starfox');
-
-
+//var tinkerDrone = arDrone.createClient(ip: '192.168.1.2');
+/*var starfox = require('starfox');
 var http = require('http'),
     fs = require('fs'),
         path = require('path');
@@ -23,11 +22,11 @@ starfox.on('connection', function(player) {
 
 starfox.mount(server);
 server.listen(3000);
+*/
 
-
-//var client  = arDrone.createClient();
-//var pngStream = client.getPngStream();
-/*require('ar-drone-png-stream')(client, { port: 8000 });
+/*var client  = arDrone.createClient();
+var pngStream = client.getPngStream();
+require('ar-drone-png-stream')(client, { port: 8000 });
 
 //pngStream.on('data', console.log);
 
@@ -38,9 +37,6 @@ client.on('navdata', function(data) {
 
 //console.log(client);
 client.takeoff();
-
-
-
 // 1) launch
 // 2) move forward
 // 3) move down to beach ball level
@@ -60,13 +56,16 @@ var autonomy = require('ardrone-autonomy');
 var mission  = autonomy.createMission();
 
 mission.takeoff()
-       .zero()       // Sets the current state as the reference
-       .altitude(1)  // Climb to altitude = 1 meter
+       .zero()
 //    .forward(1)   
 //       .right(1.7)     
 //       .backward(1) 
 //       .left(1.7)
-       .hover(1000)
+       .hover(500)
+       .cw(90)
+       .hover(500)
+       .ccw(180)
+       .hover(500)
        .land();
 
 mission.run(function (err, result) {
@@ -79,3 +78,6 @@ mission.run(function (err, result) {
         process.exit(0);
     }
 });
+
+
+
