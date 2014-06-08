@@ -1,39 +1,52 @@
-
-module.exports = function (grunt) {
-    // Project configuration.
-    grunt.initConfig({
-        run: 'node drone.js'
-    });
-    grunt.loadNpmTasks('grunt-ffmpeg');
-    grunt.registerTask('default', ['ffmpeg']);
-};
-
-/**
- * Gruntfile for In App Infinite Scroll
- * For more information: http://gruntjs.com/
- */ 
-
 module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        run: 'node tinkerdrone.js',
-        jshint: {
-            files: ['Gruntfile.js', 'src/**/*.js'],
-            options: {
-                globals: {
-                    jQuery: true,
-                    console: true,
-                    module: true,
-                    document: true
+        run: {
+            droneserver: {
+                cmd: 'node',
+                args: ['tinker-drone-server.js'],
+                options: {
+                    passArgs: ['port']
                 }
+            }
+        },
+        browserify: {
+            options: {
+                debug: true,
+                transform: ['reactify'],
+                extensions: ['.jsx']
+            },
+            app: {
+                src: 'tinker-drone-client/main.js',
+                dest: 'tinker-drone-client/drone-client.js'
+            }
+        },
+        react: {
+            files: {
+                expand: true,
+                cwd: 'tinker-drone-client',
+                src: ['**/*.jsx'],
+                dest: 'tinker-drone-client',
+                ext: '.js'
+            }
+        },
+        watch: {
+            react: {
+                files: 'tinker-drone-client/**/*.jsx',
+                tasks: ['react']
             }
         }
     });
-    
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-react');
+    grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-run');
+
     grunt.registerTask('default', [
-        'jshint',
-        'run'
+            'react',
+            'browserify',
+            'run:droneserver'
     ]);
 };
 

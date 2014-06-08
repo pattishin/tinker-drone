@@ -1,12 +1,16 @@
 {
-  "author": {
-    "name": "Drone"
-  },
-  "name": "project-drone",
-  "repository": {
-    "type": "git"
-  },
+  "name": "tinker-drone",
+  "description": "small sandbox project for ar-drone",
+  "version": "0.1.0",
   "devDependencies": {
-    "grunt": "~0.4.1"
-  }
+    "grunt": "~0.4.1",
+    "grunt-run": "~0.2.2"
+  },
+  "dependencies": {
+    "express": "~3.0.0",
+    "ar-drone": "git://github.com/felixge/node-ar-drone.git#ccc1e53dea91a9309be034d706235d7e8763065a",
+    "faye": "1.0.x"
+  },
+  "repository": "https://github.com/pattishin/tinker-drone.git",
+  "homepage": "https://github.com/pattishin/tinker-drone"
 }
