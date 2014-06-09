@@ -6,9 +6,16 @@ var Hello = React.createClass({
             return (
                 <div>
                     <div>Hello {this.props.name}</div>
-                    <input type="submit" onclick="window.location='/start';">
-                        Drone Take Off!
-                    </input> 
+                    <div>
+                        <a href="/start">
+                            Drone Take Off!
+                        </a>
+                    </div>
+                    <div> 
+                        <a href="/image">
+                            Take a picture!
+                        </a>
+                    </div> 
                 </div>
             );
         }

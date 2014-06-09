@@ -6,8 +6,15 @@ var Hello = React.createClass({displayName: 'Hello',
             return (
                 React.DOM.div(null, 
                     React.DOM.div(null, "Hello ", this.props.name),
-                    React.DOM.input( {type:"submit", onclick:"window.location='/start';"}, 
-                        "Drone Take Off!"
+                    React.DOM.div(null, 
+                        React.DOM.a( {href:"/start"}, 
+                            "Drone Take Off!"
+                        )
+                    ),
+                    React.DOM.div(null,  
+                        React.DOM.a( {href:"/image"}, 
+                            "Take a picture!"
+                        )
                     ) 
                 )
             );
