@@ -2,7 +2,7 @@ tinker-drone
 ============
 
 Sandbox for nodecopter hacking. Work In Progress.
-
+![tinker drone](https://raw.github.com/pattishin/tinker-drone/master/parrot-drone.jpg)
 ## Installation
 
 1. Install [Node](http://nodejs.org/). If you're on OSX, there's a handy pkg
