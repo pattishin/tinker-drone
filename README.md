@@ -19,8 +19,16 @@ Sandbox for nodecopter hacking. Work In Progress.
 4. To run locally run `npm install` then `grunt`. The service will be running
    on your local environment at http://localhost:2001.
 
+##Technologies
+- grunt
+- npm
+- Node.js Express
+- React.js
+- Bootstrap.css
+- node-ar-drone
+- Cylon.js
+
 ## Development
 
 Run `grunt` to get started.
-
 
