@@ -110,7 +110,7 @@ app.get("/get-drone-image", function(req, res) {
     if(currentImg.length > 0) {
         return res.end(currentImg[currentImg.length-1], "binary");
     }
-    var defaultImage = fs.readFileSync('./parrot-drone.png');
+    var defaultImage = fs.readFileSync('./army-parrot-drone.png');
     return res.end(defaultImage, 'binary');
 });
 
